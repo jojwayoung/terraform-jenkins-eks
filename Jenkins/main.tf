@@ -37,7 +37,6 @@ module "vpc" {
   igw_tags = {
     Name = "jenkins-igw"
   }
-
 }
 
 # SG
