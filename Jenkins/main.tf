@@ -82,7 +82,8 @@ module "sg" {
   }
 }
 
-data "template_cloudinit_config" "config" {
+/*
+data "cloudinit_config" "config" {
   gzip          = true
   base64_encode = true
 
@@ -95,6 +96,7 @@ data "template_cloudinit_config" "config" {
     content      = file("./jenkins-install.sh")
   }
 }
+*/
 
 # EC2
 module "ec2" {
@@ -110,7 +112,10 @@ module "ec2" {
   associate_public_ip_address = true
   availability_zone = data.aws_availability_zones.azs.names[0]
   #user_data = file("./jenkins-install.sh")
-  user_data_base64 = data.template_cloudinit_config.config.rendered
+  user_data = join("\n", [
+    file("${path.module}/swap_mem_setting.sh"),
+    file("${path.module}/jenkins-install.sh")
+  ])
 
   tags = {
     Name = "Jenkins-Server"
