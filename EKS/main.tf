@@ -46,7 +46,7 @@ module "eks" {
       max_size     = 1
       desired_size = 1
 
-      instance_type = ["t3.medium"]
+      instance_type = ["t2.micro"]
     }
   }
 
