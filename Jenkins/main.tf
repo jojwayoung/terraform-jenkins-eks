@@ -82,22 +82,6 @@ module "sg" {
   }
 }
 
-/*
-data "cloudinit_config" "config" {
-  gzip          = true
-  base64_encode = true
-
-  part {
-    content_type = "text/x-shellscript"
-    content      = file("./swap_mem_setting.sh")
-  }
-  part {
-    content_type = "text/x-shellscript"
-    content      = file("./jenkins-install.sh")
-  }
-}
-*/
-
 # EC2
 module "ec2" {
   source  = "terraform-aws-modules/ec2-instance/aws"
@@ -111,11 +95,7 @@ module "ec2" {
   vpc_security_group_ids = [module.sg.security_group_id]
   associate_public_ip_address = true
   availability_zone = data.aws_availability_zones.azs.names[0]
-  #user_data = file("./jenkins-install.sh")
-  user_data = join("\n", [
-    file("${path.module}/swap_mem_setting.sh"),
-    file("${path.module}/jenkins-install.sh")
-  ])
+  user_data = file("./jenkins-install.sh")
 
   tags = {
     Name = "Jenkins-Server"

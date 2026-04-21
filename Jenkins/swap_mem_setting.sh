@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 1. 스왑 파일 생성 (2GB: 128MB x 16)
 sudo dd if=/dev/zero of=/swapfile bs=128M count=16 # 2GB
 #sudo dd if=/dev/zero of=/swapfile bs=128M count=8 # 1GB
