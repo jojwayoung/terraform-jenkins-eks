@@ -7,9 +7,6 @@
     <list default="true" id="d8de7d54-6221-4ff5-971c-32050eeb51d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EKS/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/EKS/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkins/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkins/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkins/swap_mem_setting.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkins/swap_mem_setting.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
